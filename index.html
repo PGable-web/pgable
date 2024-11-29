@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PGable</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #0e0e0e;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #e91e63, #9c27b0);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0;
+            color: #ffffff;
+            letter-spacing: 1px;
+            position: absolute;
+            left: 40px;
+            animation: slideDown 1s ease-out;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            color: #ffffff;
+            position: relative;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background-color: #ffffff;
+            transition: width 0.3s ease-in-out;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: #ffcccb;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            text-align: center;
+            gap: 40px;
+            animation: fadeIn 1.5s ease-in-out;
+            margin-top: 100px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 25px;
+        }
+
+        button {
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background: linear-gradient(135deg, #333, #444);
+            color: #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+
+        button:hover {
+            transform: translateY(-5px) scale(1.05);
+            background: linear-gradient(135deg, #555, #666);
+        }
+
+        .invite-btn {
+            background: linear-gradient(135deg, #e91e63, #ff4081);
+        }
+
+        .invite-btn:hover {
+            background: linear-gradient(135deg, #d81b60, #ff80ab);
+        }
+
+        .join-btn {
+            background: linear-gradient(135deg, #4caf50, #66bb6a);
+        }
+
+        .join-btn:hover {
+            background: linear-gradient(135deg, #43a047, #81c784);
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #777;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PGable</h1>
+        <div class="nav-container">
+            <nav class="nav-links">
+                <a href="hits.html">Hits</a>
+                <a href="notable.html">Notable Hits</a>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="button-group">
+            <a href="https://discord.gg/pgablee" target="_blank">
+                <button class="join-btn">Join Server</button>
+            </a>
+            <a href="https://discord.com/oauth2/authorize?client_id=1307572851993346058" target="_blank">
+                <button class="invite-btn">Invite Bot</button>
+            </a>
+        </div>
+    </div>
+    <footer>
+        © 2024 PGable. All rights reserved.
+    </footer>
+</body>
+</html>

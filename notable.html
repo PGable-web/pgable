@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notable Hits - PGable</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #2c2c2c;
+            color: #f4c542;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(90deg, #f4c542, #d98e2e);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 0;
+            color: #fff;
+            letter-spacing: 1px;
+            position: absolute;
+            left: 40px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            position: absolute;
+            right: 40px;
+        }
+        .nav-links a {
+            font-size: 1rem;
+            font-weight: 500;
+            text-decoration: none;
+            color: #fff;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #f4c542;
+        }
+        .container {
+            margin-top: 120px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px;
+        }
+        .image-box {
+            width: calc(33.33% - 20px);
+            margin-bottom: 20px;
+            border: 2px solid #f4c542;
+            border-radius: 10px;
+            overflow: hidden;
+            background: #1e1e1e;
+            transition: transform 0.3s ease;
+        }
+        .image-box img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .image-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.7);
+        }
+        footer {
+            margin-top: auto;
+            padding: 10px 20px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #bbb;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>PGable</h1>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="hits.html">Hits</a>
+        </nav>
+    </header>
+    <div class="container" id="image-container"></div>
+    <footer>
+        © 2024 PGable. All rights reserved.
+    </footer>
+    <script>
+        const totalImages = 8;
+        const images = [];
+
+        for (let i = 1; i <= totalImages; i++) {
+            images.push(`Notable_Hits/image${i}.jpg`);
+        }
+
+        const imageContainer = document.getElementById("image-container");
+
+        function loadImages() {
+            images.forEach(image => {
+                const imageBox = document.createElement("div");
+                imageBox.classList.add("image-box");
+
+                const imgElement = document.createElement("img");
+                imgElement.src = image;
+                imgElement.alt = `Notable Hit Image ${image}`;
+
+                imageBox.appendChild(imgElement);
+                imageContainer.appendChild(imageBox);
+            });
+        }
+
+        loadImages();
+    </script>
+</body>
+</html>
